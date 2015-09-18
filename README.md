@@ -10,13 +10,13 @@ Instructions:
 The demsotration code was executed as follows:
 
 // Demo 1 - JSON demo
-// JSONdemo.rundemo();
+JSONdemo.rundemo();
 
 // Demo 2 - REST callout
 // NOTE: you must configure remote site settings
-// HTTPcalloutbasic.callREST();
+HTTPcalloutbasic.callREST();
 
-/* Demo 3 - Mass report generation
+//Demo 3 - Mass report generation
 
 // NOTE: you must configure remote site settings (if not already done).
 // NOTE: you must create a connected app for Oauth 2.0 authentication.
@@ -25,7 +25,6 @@ Init.removeAccounts();          // removes our test accounts
 Init.createAccounts(100);       // creates 100 fake test accounts
 Bulkgenerate.startProcess();    // initiates mass report generation process
 
-*/
 
 Nem Stefanovic
 nem@kooltra.com
