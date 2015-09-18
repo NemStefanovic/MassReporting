@@ -1,0 +1,60 @@
+<apex:page controller="PDFreportcontroller" renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style> 
+	        @page{
+	        	margin: 25mm;
+	            size: landscape;
+	        }
+            body { font-family: 'Arial Unicode MS'; }
+            .companyName { font: bold 30px; color: red; }
+        </style> 
+    </head>
+    <body>  
+        <center>
+ 		<!--  put a basic data table here -->    
+		<apex:dataTable align="center" value="{!payload}" var="record" id="theTable" style="border: 1px solid black;">
+				<apex:facet name="header"> AUTOMATICALLY GENERATED REPORT <br/>			 	
+				</apex:facet>
+				<apex:facet name="footer">END OF REPORT</apex:facet>
+		
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">
+				 		<apex:facet name="header">Record ID</apex:facet>
+						<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.ID}"/>		
+				</apex:column>
+		
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">		
+					<apex:facet name="header">Name</apex:facet>		
+					<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.name}"/>		
+				</apex:column>		
+
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">		
+					<apex:facet name="header">Summary</apex:facet>		
+					<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.summary}"/>		
+				</apex:column>		
+
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">		
+					<apex:facet name="header">Daily Position</apex:facet>		
+					<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.dailyposition}"/>		
+				</apex:column>		
+
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">		
+					<apex:facet name="header">Trend</apex:facet>		
+					<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.trend}"/>		
+				</apex:column>		
+
+				<apex:column style="font-size:xx-small;border: 1px solid black;width:15%;">		
+					<apex:facet name="header">Delta</apex:facet>		
+					<apex:facet name="footer">---</apex:facet>		
+					<apex:outputText value="{!record.delta}"/>		
+				</apex:column>		
+
+		</apex:dataTable>        
+        
+        </center>
+    </body>
+</apex:page>
